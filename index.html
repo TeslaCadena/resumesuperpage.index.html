@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
-        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; background: #f9f9fc; }
         .playfair { font-family: 'Playfair Display', serif; }
         .display-font { font-family: 'Montserrat', sans-serif; letter-spacing: -0.01em; }
 
@@ -21,7 +21,7 @@
         .timeline:before {
             content: "";
             position: absolute;
-            left: 7px; /* half of 14px, so line is exactly centered through the 14px circles */
+            left: 7px;
             top: 0;
             bottom: 0;
             width: 2px;
@@ -36,7 +36,7 @@
         .timeline-circle {
             position: absolute;
             left: 0;
-            top: 2px; /* aligns visually with the job title */
+            top: 2px;
             width: 14px;
             height: 14px;
             background: #e0e7ff;
@@ -90,34 +90,35 @@
         .skill-category:hover { transform: translateY(-3px); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-[#f9f9fc]">
 
-    <!-- Resume Header (Shrunk for better spacing and match) -->
-    <section class="pt-8 pb-6 md:pt-12 md:pb-8 bg-gradient-to-br from-indigo-50 to-purple-50">
+    <!-- Resume Header -->
+    <section class="pt-8 pb-0 md:pt-12 md:pb-0 bg-[#f9f9fc]">
         <div class="container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-xl md:text-2xl font-extrabold display-font mb-2 text-gray-800">
                     Professional <span class="text-indigo-500">Resume</span>
                 </h1>
             </div>
-            <div class="mt-6 flex justify-center space-x-4">
-                <a href="#" class="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition shadow-md flex items-center text-base font-medium">
+            <!-- Reduce space under button to only 1rem (mt-4) -->
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="https://drive.google.com/file/d/1Wy9SUbjnPNNZ5pcn0DAWsUM2XQslYxqC/view?usp=sharing" target="_blank" rel="noopener" class="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition shadow-md flex items-center text-base font-medium">
                     <i class="fas fa-download mr-2"></i> Download Resume
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Resume Content -->
-    <section class="py-16 bg-white">
+    <!-- Resume Content: minimal gap after button/header -->
+    <section class="py-16 bg-[#f9f9fc] mt-0">
         <div class="container mx-auto px-4">
             <div class="max-w-5xl mx-auto">
-                <!-- Resume Tabs -->
+                <!-- Resume Tabs: Skills before Education -->
                 <div class="mb-12 border-b border-gray-200">
                     <div class="flex flex-wrap -mb-px">
                         <button class="resume-tab tab-active mr-8 py-4 px-1 text-lg font-medium" data-tab="experience">Experience</button>
-                        <button class="resume-tab mr-8 py-4 px-1 text-lg font-medium text-gray-500" data-tab="education">Education</button>
                         <button class="resume-tab mr-8 py-4 px-1 text-lg font-medium text-gray-500" data-tab="skills">Skills</button>
+                        <button class="resume-tab mr-8 py-4 px-1 text-lg font-medium text-gray-500" data-tab="education">Education</button>
                     </div>
                 </div>
                 
@@ -266,29 +267,6 @@
                         </div>
                     </div>
 
-                    <!-- Education Tab (timeline removed) -->
-                    <div id="education-tab" class="resume-tab-content hidden">
-                        <div class="education-timeline">
-                            <div>
-                                <div class="mb-2">
-                                    <span class="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Sam Houston State University</span>
-                                </div>
-                                <h3 class="text-xl font-semibold text-gray-800 mb-1">B.A. Mass Communications</h3>
-                                <p class="text-gray-600 mb-2">Emphasis in Multi-Platform Journalism</p>
-
-                                <div class="mt-6">
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-1">B.F.A. Theatre</h3>
-                                    <p class="text-gray-600">Emphasis in Acting and Directing</p>
-                                </div>
-
-                                <div class="mt-8 bg-gray-50 p-6 rounded-lg border border-gray-100">
-                                    <h4 class="font-medium text-gray-700 mb-3">How My Education Shaped My Career</h4>
-                                    <p class="text-gray-600 mb-3">With a background in journalism and theatre, I bring analytical precision and creative storytelling to my work. Journalism sharpened my attention to detail; theatre strengthened my ability to connect with audiences. Together, they help me create marketing campaigns that are clear, strategic, and engaging. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Skills Tab -->
                     <div id="skills-tab" class="resume-tab-content hidden">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -391,6 +369,29 @@
                                     <span class="px-3 py-1 bg-white text-pink-700 rounded-full text-sm border border-pink-200">SmartSheet</span>
                                     <span class="px-3 py-1 bg-white text-pink-700 rounded-full text-sm border border-pink-200">Scribe</span>
                                     <span class="px-3 py-1 bg-white text-pink-700 rounded-full text-sm border border-pink-200">BIC Process Modeling</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Tab (last) -->
+                    <div id="education-tab" class="resume-tab-content hidden">
+                        <div class="education-timeline">
+                            <div>
+                                <div class="mb-2">
+                                    <span class="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Sam Houston State University</span>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-1">B.A. Mass Communications</h3>
+                                <p class="text-gray-600 mb-2">Emphasis in Multi-Platform Journalism</p>
+
+                                <div class="mt-6">
+                                    <h3 class="text-xl font-semibold text-gray-800 mb-1">B.F.A. Theatre</h3>
+                                    <p class="text-gray-600">Emphasis in Acting and Directing</p>
+                                </div>
+
+                                <div class="mt-8 bg-gray-50 p-6 rounded-lg border border-gray-100">
+                                    <h4 class="font-medium text-gray-700 mb-3">How My Education Shaped My Career</h4>
+                                    <p class="text-gray-600 mb-3">With a background in journalism and theatre, I bring analytical precision and creative storytelling to my work. Journalism sharpened my attention to detail; theatre strengthened my ability to connect with audiences. Together, they help me create marketing campaigns that are clear, strategic, and engaging. </p>
                                 </div>
                             </div>
                         </div>
